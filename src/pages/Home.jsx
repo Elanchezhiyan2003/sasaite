@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, Sparkles, Zap, Heart, Users } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import VisionMission from '@/components/home/VisionMission';
-import Gallery from '@/components/home/Gallery';
 
 const Home = () => {
   return (
@@ -227,9 +226,6 @@ const Home = () => {
 
         {/* Vision & Mission Section */}
         <VisionMission />
-
-        {/* Gallery Section */}
-        <Gallery />
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 py-28 mx-auto px-4">
               {[
