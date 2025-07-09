@@ -1,24 +1,27 @@
-import React from 'react';
-import { Helmet } from 'react-helmet';
-import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
-import { ArrowRight, Sparkles, Zap, Heart, Users } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import VisionMission from '@/components/home/VisionMission';
+import React from "react";
+import { Helmet } from "react-helmet";
+import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
+import { ArrowRight, Sparkles, Zap, Heart, Users } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import VisionMission from "@/components/home/VisionMission";
 
 const Home = () => {
   return (
     <>
       <Helmet>
         <title>Stasis Artis - Code n Craft</title>
-        <meta name="description" content="India's First Women-Led MSME-Registered Createch Studio, fusing resin art with embedded technology. Sculpting emotion through resin and code." />
+        <meta
+          name="description"
+          content="India's First Women-Led MSME-Registered Createch Studio, fusing resin art with embedded technology. Sculpting emotion through resin and code."
+        />
       </Helmet>
 
       <div className="min-h-screen">
         {/* Hero Section */}
         <section className="relative min-h-screen flex items-center justify-center pattern-bg overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-br from-black/50 via-transparent to-teal-900/20"></div>
-          
+
           <div className="container mx-auto px-4 py-28 relative z-10">
             <div className="text-center space-y-8 max-w-4xl mx-auto">
               <motion.div
@@ -30,10 +33,10 @@ const Home = () => {
                 {/* <h1 className="text-5xl md:text-7xl font-playfair font-bold text-shadow"> */}
                 <h1 className="text-5xl md:text-7xl font-playfair font-bold text-shadow leading-snug md:leading-[1.2]">
                   <span className="gradient-text">Art Isn't Static</span>
-                  <br className='' />
+                  <br className="" />
                   <span className="text-white">Neither Are We</span>
                 </h1>
-                
+
                 <motion.div
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
@@ -44,7 +47,9 @@ const Home = () => {
                     Stasis Artis : Sculpting Emotion Through Resin and Code
                   </h2> */}
                   <p className="text-lg md:text-xl text-gray-300 max-w-4xl py-5 mx-auto leading-relaxed">
-                    We don't just make art. We encode memories into materials — blending handcrafted resin design with digital fluidity, intelligent motion, and emotional software.
+                    We don't just make art. We encode memories into materials —
+                    blending handcrafted resin design with digital fluidity,
+                    intelligent motion, and emotional software.
                   </p>
                 </motion.div>
               </motion.div>
@@ -83,18 +88,27 @@ const Home = () => {
                 className="glass-effect rounded-2xl p-6 max-w-2xl mx-auto mt-12"
               >
                 <blockquote className="text-lg md:text-xl font-playfair italic text-center">
-                  "In a world of automation, we choose sensation. In a world of code, we choose craft."
+                  "In a world of automation, we choose sensation. In a world of
+                  code, we choose craft."
                 </blockquote>
                 {/* <p className="text-teal-400 mt-2 text-center">— Stasis Artis Manifesto</p> */}
-                <p className="text-teal-400 mt-2 text-center">— Our Manifesto</p>
+                <p className="text-teal-400 mt-2 text-center">
+                  — Our Manifesto
+                </p>
               </motion.div>
             </div>
           </div>
 
           {/* Floating Elements */}
           <div className="absolute top-20 left-10 w-20 h-20 rounded-full bg-gradient-to-r from-teal-400/20 to-cyan-400/20 floating-animation"></div>
-          <div className="absolute bottom-20 right-10 w-32 h-32 rounded-full bg-gradient-to-r from-cyan-400/10 to-teal-400/10 floating-animation" style={{ animationDelay: '2s' }}></div>
-          <div className="absolute top-1/2 left-20 w-16 h-16 rounded-full bg-gradient-to-r from-teal-500/15 to-cyan-500/15 floating-animation" style={{ animationDelay: '4s' }}></div>
+          <div
+            className="absolute bottom-20 right-10 w-32 h-32 rounded-full bg-gradient-to-r from-cyan-400/10 to-teal-400/10 floating-animation"
+            style={{ animationDelay: "2s" }}
+          ></div>
+          <div
+            className="absolute top-1/2 left-20 w-16 h-16 rounded-full bg-gradient-to-r from-teal-500/15 to-cyan-500/15 floating-animation"
+            style={{ animationDelay: "4s" }}
+          ></div>
         </section>
 
         {/* Features Section */}
@@ -165,54 +179,70 @@ const Home = () => {
                 </motion.div>
               ))}
             </div> */}
-              <section className="">
-                      <div className="container mx-auto px-4">
-                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center pb-2">
-                          <motion.div
-                            initial={{ opacity: 0, x: -50 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            transition={{ duration: 0.8 }}
-                            className="space-y-16 lg:pr-8"
-                          >
-                            <h2 className="text-4xl font-playfair font-bold text-white">
-                              The Vision Behind <span className="gradient-text">Stasis Artis</span>
-                            </h2>
-                            <div className="space-y-5 text-gray-300 leading-relaxed">
-                              <p>
-                                In a world that constantly asks us to choose between logic and creativity, between technology and art, We refused to pick a side. As a woman in tech, I've always believed that the most beautiful innovations happen at the intersection of seemingly opposite worlds.
-                              </p>
-                              <p>
-                                Stasis Artis was born from a simple yet revolutionary idea: What if we could encode emotions into materials? What if resin could hold not just pigments, but memories? What if circuits could carry not just electricity, but feelings?
-                              </p>
-                              <p>
-                                This isn't just about creating pretty objects. It's about challenging the notion that technology must be cold, that art must be static, that creativity and code can't coexist in perfect harmony.
-                              </p>
-                            </div>
-                          </motion.div>
-            
-                          <motion.div
-                            initial={{ opacity: 0, x: 50 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            transition={{ duration: 0.8 }}
-                            className="relative"
-                          >
-                            <div className="glass-effect rounded-2xl p-8 space-y-4">
-                              <img  
-                                className="w-full h-64 object-cover rounded-xl" 
-                                alt="Asmiya Bincy working on resin art with embedded technology"
-                               src="https://images.unsplash.com/photo-1581094271901-8022df4466f9" />
-                              <div className="text-center">
-                                <h3 className="text-xl font-semibold text-white">Asmiya Bincy</h3>
-                                <p className="text-teal-400">Founder & Creative Technologist</p>
-                              </div>
-                            </div>
-                          </motion.div>
-                        </div>
+            <section className="">
+              <div className="container mx-auto px-4">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center pb-2">
+                  <motion.div
+                    initial={{ opacity: 0, x: -50 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.8 }}
+                    className="space-y-16 lg:pr-8"
+                  >
+                    <h2 className="text-4xl font-playfair font-bold text-white">
+                      The Vision Behind{" "}
+                      <span className="gradient-text">Stasis Artis</span>
+                    </h2>
+                    <div className="space-y-5 text-gray-300 leading-relaxed">
+                      <p>
+                        In a world that constantly asks us to choose between
+                        logic and creativity, between technology and art, We
+                        refused to pick a side. As a woman in tech, I've always
+                        believed that the most beautiful innovations happen at
+                        the intersection of seemingly opposite worlds.
+                      </p>
+                      <p>
+                        Stasis Artis was born from a simple yet revolutionary
+                        idea: What if we could encode emotions into materials?
+                        What if resin could hold not just pigments, but
+                        memories? What if circuits could carry not just
+                        electricity, but feelings?
+                      </p>
+                      <p>
+                        This isn't just about creating pretty objects. It's
+                        about challenging the notion that technology must be
+                        cold, that art must be static, that creativity and code
+                        can't coexist in perfect harmony.
+                      </p>
+                    </div>
+                  </motion.div>
+
+                  <motion.div
+                    initial={{ opacity: 0, x: 50 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.8 }}
+                    className="relative"
+                  >
+                    <div className="glass-effect rounded-2xl p-8 space-y-4">
+                      <img
+                        className="w-full h-64 object-cover rounded-xl"
+                        alt="Asmiya Bincy working on resin art with embedded technology"
+                        src="https://images.unsplash.com/photo-1581094271901-8022df4466f9"
+                      />
+                      <div className="text-center">
+                        <h3 className="text-xl font-semibold text-white">
+                          Asmiya Bincy
+                        </h3>
+                        <p className="text-teal-400">
+                          Founder & Creative Technologist
+                        </p>
                       </div>
-                    </section>
-                    
-                    
-                    {/* <Link to="/about" className='mt-8 flex justify-start '>
+                    </div>
+                  </motion.div>
+                </div>
+              </div>
+            </section>
+
+            {/* <Link to="/about" className='mt-8 flex justify-start '>
                   <Button
                     size="lg"
                     className="bg-gradient-to-r from-teal-500 to-cyan-500 hover:from-teal-600 hover:to-cyan-600 text-black font-semibold px-8 py-3 rounded-full glow-effect hover-lift"
@@ -247,17 +277,17 @@ const Home = () => {
                 },
                 {
                   icon: <Users className="h-8 w-8" />,
-                  title: "Community Driven",
+                  title: "Programs",
                   description: "Building a ecosystem of creators, coders, and dreamers who refuse to pick just one title."
                 },
                 {
                   icon: <ArrowRight className="h-8 w-8" />,
-                  title: "MSME Certified",
+                  title: "Bulk Orders",
                   description: "India's first women-led MSME-registered createch studio, pioneering the fusion movement."
                 },
                 {
                   icon: <Heart className="h-8 w-8" />,
-                  title: "Educational Impact",
+                  title: "Createch Internship",
                   description: "Teaching the next generation that creativity and technology are not opposites, but partners."
                 }
               ].map((feature, index) => (
@@ -355,10 +385,12 @@ const Home = () => {
               className="text-center space-y-8"
             >
               <h2 className="text-4xl md:text-5xl font-playfair font-bold text-white">
-                Ready to Create Something <span className="gradient-text">Extraordinary</span>?
+                Ready to Create Something{" "}
+                <span className="gradient-text">Extraordinary</span>?
               </h2>
               <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-                Join us in redefining what's possible when art meets technology, when craft meets code.
+                Join us in redefining what's possible when art meets technology,
+                when craft meets code.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link to="/offerings">
