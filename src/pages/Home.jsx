@@ -247,17 +247,17 @@ const Home = () => {
                 },
                 {
                   icon: <Users className="h-8 w-8" />,
-                  title: "Community Driven",
+                  title: "Programms",
                   description: "Building a ecosystem of creators, coders, and dreamers who refuse to pick just one title."
                 },
                 {
                   icon: <ArrowRight className="h-8 w-8" />,
-                  title: "MSME Certified",
+                  title: "Bulk Orders",
                   description: "India's first women-led MSME-registered createch studio, pioneering the fusion movement."
                 },
                 {
                   icon: <Heart className="h-8 w-8" />,
-                  title: "Educational Impact",
+                  title: "Createch Internship",
                   description: "Teaching the next generation that creativity and technology are not opposites, but partners."
                 }
               ].map((feature, index) => (
