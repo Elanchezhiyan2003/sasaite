@@ -225,9 +225,61 @@ const Home = () => {
         </section>
 
         {/* Vision & Mission Section */}
-        <VisionMission />
+        {/* <VisionMission /> */}
+        <div className='mt-44 mb-10 container mx-auto px-4'>
+          <h2 className="text-4xl font-playfair font-bold text-white text-center ">What we offer</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 py-16  mx-auto px-4">
+              {[
+                {
+                  icon: <Heart className="h-8 w-8" />,
+                  title: "Code",
+                  description: "We embed feelings into circuits, creating tech that responds to human emotion and connection."
+                },
+                {
+                  icon: <Sparkles className="h-8 w-8" />,
+                  title: "Craft",
+                  description: "Handcrafted resin creations that capture memories, stories, and moments in crystalline beauty."
+                },
+                {
+                  icon: <Zap className="h-8 w-8" />,
+                  title: "Code n Craft",
+                  description: "LEDs, sensors, and interactive elements that bring static art to dynamic life."
+                },
+                {
+                  icon: <Users className="h-8 w-8" />,
+                  title: "Community Driven",
+                  description: "Building a ecosystem of creators, coders, and dreamers who refuse to pick just one title."
+                },
+                {
+                  icon: <ArrowRight className="h-8 w-8" />,
+                  title: "MSME Certified",
+                  description: "India's first women-led MSME-registered createch studio, pioneering the fusion movement."
+                },
+                {
+                  icon: <Heart className="h-8 w-8" />,
+                  title: "Educational Impact",
+                  description: "Teaching the next generation that creativity and technology are not opposites, but partners."
+                }
+              ].map((feature, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  className="glass-effect rounded-xl p-6 hover-lift group"
+                >
+                  <div className="text-teal-400 mb-4 group-hover:scale-110 transition-transform">
+                    {feature.icon}
+                  </div>
+                  <h3 className="text-xl font-semibold text-white mb-3">{feature.title}</h3>
+                  <p className="text-gray-300 leading-relaxed">{feature.description}</p>
+                </motion.div>
+              ))}
+            </div>
+            
+        </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 py-28 mx-auto px-4">
+        {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 py-28 mx-auto px-4">
               {[
                 {
                   icon: <Heart className="h-8 w-8" />,
@@ -274,7 +326,7 @@ const Home = () => {
                   <p className="text-gray-300 leading-relaxed">{feature.description}</p>
                 </motion.div>
               ))}
-            </div>
+            </div> */}
 
         {/* Quote Section */}
         {/* <section className="py-20 bg-gradient-to-r from-teal-900/20 to-cyan-900/20">
