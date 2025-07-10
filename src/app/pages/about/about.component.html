@@ -1,0 +1,133 @@
+<div class="min-h-screen pt-20">
+  <!-- Hero Section -->
+  <section class="py-20 pattern-bg">
+    <div class="container mx-auto px-4">
+      <div class="text-center space-y-6 max-w-4xl mx-auto">
+        <h1 class="text-5xl md:text-6xl font-playfair font-bold">
+          <span class="gradient-text">Where Code Meets Craft</span>
+        </h1>
+        <p class="text-xl md:text-2xl text-gray-300">
+          My Journey as Asmiya Bincy
+        </p>
+        <div class="glass-effect rounded-2xl p-8 mt-8">
+          <blockquote class="text-lg md:text-xl font-playfair italic">
+            "Why choose between circuits and color, when both can hold emotion?"
+          </blockquote>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Founder Story -->
+  <section class="py-20">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div class="space-y-6">
+          <h2 class="text-4xl font-playfair font-bold text-white">
+            The Vision Behind <span class="gradient-text">Stasis Artis</span>
+          </h2>
+          <div class="space-y-4 text-gray-300 leading-relaxed">
+            <p>
+              In a world that constantly asks us to choose between logic and creativity, between technology and art, I refused to pick a side. As a woman in tech, I've always believed that the most beautiful innovations happen at the intersection of seemingly opposite worlds.
+            </p>
+            <p>
+              Stasis Artis was born from a simple yet revolutionary idea: What if we could encode emotions into materials? What if resin could hold not just pigments, but memories? What if circuits could carry not just electricity, but feelings?
+            </p>
+            <p>
+              This isn't just about creating pretty objects. It's about challenging the notion that technology must be cold, that art must be static, that creativity and code can't coexist in perfect harmony.
+            </p>
+          </div>
+        </div>
+
+        <div class="relative">
+          <div class="glass-effect rounded-2xl p-8 space-y-6">
+            <img  
+              class="w-full h-64 object-cover rounded-xl" 
+              alt="Asmiya Bincy working on resin art with embedded technology"
+              src="https://images.unsplash.com/photo-1581094271901-8022df4466f9" />
+            <div class="text-center">
+              <h3 class="text-xl font-semibold text-white">Asmiya Bincy</h3>
+              <p class="text-teal-400">Founder & Creative Technologist</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mission & Values -->
+  <section class="py-20 bg-gradient-to-b from-transparent to-gray-900/50">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl md:text-5xl font-playfair font-bold gradient-text mb-4">
+          Our Mission & Values
+        </h2>
+        <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+          Building bridges between worlds that were never meant to be separate
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div 
+          *ngFor="let value of values; let i = index"
+          class="glass-effect rounded-xl p-6 hover-lift group text-center">
+          <div class="text-teal-400 mb-4 flex justify-center group-hover:scale-110 transition-transform">
+            <svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold text-white mb-3">{{ value.title }}</h3>
+          <p class="text-gray-300 leading-relaxed">{{ value.description }}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MSME Recognition -->
+  <section class="py-20">
+    <div class="container mx-auto px-4">
+      <div class="glass-effect rounded-2xl p-8 md:p-12 text-center max-w-4xl mx-auto">
+        <div class="space-y-6">
+          <div class="w-16 h-16 mx-auto rounded-full bg-gradient-to-r from-teal-400 to-cyan-400 flex items-center justify-center">
+            <svg class="h-8 w-8 text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+            </svg>
+          </div>
+          <h2 class="text-3xl md:text-4xl font-playfair font-bold text-white">
+            MSME Registered Enterprise
+          </h2>
+          <p class="text-lg text-gray-300 leading-relaxed">
+            As India's first women-led MSME-registered createch studio, we're not just creating art and technology – we're creating opportunities, inspiring change, and proving that innovation knows no boundaries.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Philosophy Quote -->
+  <section class="py-20 bg-gradient-to-r from-teal-900/20 to-cyan-900/20">
+    <div class="container mx-auto px-4">
+      <div class="text-center max-w-4xl mx-auto space-y-8">
+        <blockquote class="text-3xl md:text-4xl font-playfair italic text-white">
+          "In a world of automation, we choose sensation. In a world of code, we choose craft. But most importantly, we choose both."
+        </blockquote>
+        <p class="text-teal-400 text-lg">— The Stasis Artis Philosophy</p>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+          <div class="text-center">
+            <div class="text-3xl font-bold gradient-text">2024</div>
+            <p class="text-gray-300">Founded</p>
+          </div>
+          <div class="text-center">
+            <div class="text-3xl font-bold gradient-text">1st</div>
+            <p class="text-gray-300">Women-Led Createch Studio</p>
+          </div>
+          <div class="text-center">
+            <div class="text-3xl font-bold gradient-text">∞</div>
+            <p class="text-gray-300">Possibilities Ahead</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

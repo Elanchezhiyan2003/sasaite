@@ -1,0 +1,149 @@
+<div class="min-h-screen">
+  <!-- Hero Section -->
+  <section class="relative min-h-screen flex items-center justify-center pattern-bg overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-black/50 via-transparent to-teal-900/20"></div>
+    
+    <div class="container mx-auto px-4 py-28 relative z-10">
+      <div class="text-center space-y-8 max-w-4xl mx-auto">
+        <div class="space-y-4">
+          <h1 class="text-5xl md:text-7xl font-playfair font-bold text-shadow leading-snug md:leading-[1.2]">
+            <span class="gradient-text">Art Isn't Static</span>
+            <br class="" />
+            <span class="text-white">Neither Are We</span>
+          </h1>
+          
+          <div class="space-y-2">
+            <p class="text-lg md:text-xl text-gray-300 max-w-4xl py-5 mx-auto leading-relaxed">
+              We don't just make art. We encode memories into materials — blending handcrafted resin design with digital fluidity, intelligent motion, and emotional software.
+            </p>
+          </div>
+        </div>
+
+        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center py-2">
+          <app-button
+            size="lg"
+            className="bg-gradient-to-r from-teal-500 to-cyan-500 hover:from-teal-600 hover:to-cyan-600 text-black font-semibold px-8 py-3 rounded-full glow-effect hover-lift"
+            (onClick)="navigateToExperience()">
+            <svg class="mr-2 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+            </svg>
+            Experience the Fusion
+          </app-button>
+          <app-button
+            variant="outline"
+            size="lg"
+            className="border-teal-400 text-teal-400 hover:bg-teal-400 hover:text-black px-8 py-3 rounded-full hover-lift"
+            (onClick)="navigateToContact()">
+            <svg class="mr-2 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+            </svg>
+            Create With Us
+          </app-button>
+        </div>
+
+        <div class="glass-effect rounded-2xl p-6 max-w-2xl mx-auto mt-12">
+          <blockquote class="text-lg md:text-xl font-playfair italic text-center">
+            "In a world of automation, we choose sensation. In a world of code, we choose craft."
+          </blockquote>
+          <p class="text-teal-400 mt-2 text-center">— Our Manifesto</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Floating Elements -->
+    <div class="absolute top-20 left-10 w-20 h-20 rounded-full bg-gradient-to-r from-teal-400/20 to-cyan-400/20 floating-animation"></div>
+    <div class="absolute bottom-20 right-10 w-32 h-32 rounded-full bg-gradient-to-r from-cyan-400/10 to-teal-400/10 floating-animation" style="animation-delay: 2s"></div>
+    <div class="absolute top-1/2 left-20 w-16 h-16 rounded-full bg-gradient-to-r from-teal-500/15 to-cyan-500/15 floating-animation" style="animation-delay: 4s"></div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="relative py-2 bg-gradient-to-b from-transparent to-gray-900/50">
+    <div class="container mx-auto px-4">
+      <section class="">
+        <div class="container mx-auto px-4">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center pb-2">
+            <div class="space-y-16 lg:pr-8">
+              <h2 class="text-4xl font-playfair font-bold text-white">
+                The Vision Behind <span class="gradient-text">Stasis Artis</span>
+              </h2>
+              <div class="space-y-5 text-gray-300 leading-relaxed">
+                <p>
+                  In a world that constantly asks us to choose between logic and creativity, between technology and art, We refused to pick a side. As a woman in tech, I've always believed that the most beautiful innovations happen at the intersection of seemingly opposite worlds.
+                </p>
+                <p>
+                  Stasis Artis was born from a simple yet revolutionary idea: What if we could encode emotions into materials? What if resin could hold not just pigments, but memories? What if circuits could carry not just electricity, but feelings?
+                </p>
+                <p>
+                  This isn't just about creating pretty objects. It's about challenging the notion that technology must be cold, that art must be static, that creativity and code can't coexist in perfect harmony.
+                </p>
+              </div>
+            </div>
+
+            <div class="relative">
+              <div class="glass-effect rounded-2xl p-8 space-y-4">
+                <img  
+                  class="w-full h-64 object-cover rounded-xl" 
+                  alt="Asmiya Bincy working on resin art with embedded technology"
+                  src="https://images.unsplash.com/photo-1581094271901-8022df4466f9" />
+                <div class="text-center">
+                  <h3 class="text-xl font-semibold text-white">Asmiya Bincy</h3>
+                  <p class="text-teal-400">Founder & Creative Technologist</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </section>
+
+  <!-- What We Offer Section -->
+  <div class='mt-44 mb-10 container mx-auto px-4'>
+    <h2 class="text-4xl font-playfair font-bold text-white text-center">What we offer</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 py-16 mx-auto px-4">
+      <div 
+        *ngFor="let feature of features; let i = index"
+        class="glass-effect rounded-xl p-6 hover-lift group">
+        <div class="text-teal-400 mb-4 group-hover:scale-110 transition-transform">
+          <svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+          </svg>
+        </div>
+        <h3 class="text-xl font-semibold text-white mb-3">{{ feature.title }}</h3>
+        <p class="text-gray-300 leading-relaxed">{{ feature.description }}</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA Section -->
+  <section class="py-20">
+    <div class="container mx-auto px-4">
+      <div class="text-center space-y-8">
+        <h2 class="text-4xl md:text-5xl font-playfair font-bold text-white">
+          Ready to Create Something <span class="gradient-text">Extraordinary</span>?
+        </h2>
+        <p class="text-xl text-gray-300 max-w-2xl mx-auto">
+          Join us in redefining what's possible when art meets technology, when craft meets code.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <app-button
+            size="lg"
+            className="bg-gradient-to-r from-teal-500 to-cyan-500 hover:from-teal-600 hover:to-cyan-600 text-black font-semibold px-8 py-3 rounded-full glow-effect hover-lift"
+            (onClick)="navigateToOfferings()">
+            Explore Our Offerings
+            <svg class="ml-2 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+            </svg>
+          </app-button>
+          <app-button
+            variant="outline"
+            size="lg"
+            className="border-teal-400 text-teal-400 hover:bg-teal-400 hover:text-black px-8 py-3 rounded-full hover-lift"
+            (onClick)="navigateToContact()">
+            Get In Touch
+          </app-button>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
