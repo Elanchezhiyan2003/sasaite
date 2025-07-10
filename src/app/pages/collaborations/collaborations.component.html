@@ -1,0 +1,213 @@
+<div class="min-h-screen pt-20">
+  <!-- Hero Section -->
+  <section class="py-20 pattern-bg">
+    <div class="container mx-auto px-4">
+      <div class="text-center space-y-6 max-w-4xl mx-auto">
+        <h1 class="text-5xl md:text-6xl font-playfair font-bold">
+          <span class="gradient-text">Collaborations</span>
+        </h1>
+        <p class="text-xl md:text-2xl text-gray-300">
+          B2B Partnerships & Creator Circle
+        </p>
+        <div class="glass-effect rounded-2xl p-6 max-w-2xl mx-auto">
+          <p class="text-lg text-gray-300">
+            Building bridges between industries, creators, and innovators to expand the boundaries of what's possible in createch.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- B2B Partnerships -->
+  <section class="py-20">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl md:text-5xl font-playfair font-bold gradient-text mb-4">
+          B2B Partnerships
+        </h2>
+        <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+          Transforming industries through strategic collaborations that blend creativity with technology
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div 
+          *ngFor="let partner of b2bPartners; let i = index"
+          class="glass-effect rounded-xl p-8 hover-lift group">
+          <div class="space-y-6">
+            <div class="flex items-center space-x-4">
+              <div class="text-teal-400 group-hover:scale-110 transition-transform">
+                <svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                </svg>
+              </div>
+              <h3 class="text-2xl font-playfair font-bold text-white">
+                {{ partner.title }}
+              </h3>
+            </div>
+            
+            <p class="text-gray-300 leading-relaxed">
+              {{ partner.description }}
+            </p>
+            
+            <div class="space-y-2">
+              <h4 class="text-lg font-semibold text-teal-400">Our Services:</h4>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                <div 
+                  *ngFor="let service of partner.services"
+                  class="flex items-center space-x-2">
+                  <div class="w-2 h-2 rounded-full bg-gradient-to-r from-teal-400 to-cyan-400"></div>
+                  <span class="text-gray-300 text-sm">{{ service }}</span>
+                </div>
+              </div>
+            </div>
+            
+            <app-button
+              variant="outline"
+              className="w-full border-teal-400 text-teal-400 hover:bg-teal-400 hover:text-black group-hover:scale-105 transition-transform"
+              (onClick)="handleBookB2BCall()">
+              <svg class="mr-2 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+              </svg>
+              Book a B2B Call
+            </app-button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- B2B Consultation Info -->
+  <section class="py-20 bg-gradient-to-b from-transparent to-gray-900/50">
+    <div class="container mx-auto px-4">
+      <app-b2b-consultation-info></app-b2b-consultation-info>
+    </div>
+  </section>
+
+  <!-- B2B Call Form -->
+  <section 
+    *ngIf="showB2BForm" 
+    id="b2b-call-form" 
+    class="py-20 bg-gradient-to-b from-gray-900/50 to-black">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl md:text-5xl font-playfair font-bold text-white mb-4">
+          Schedule Your <span class="gradient-text">B2B Consultation</span>
+        </h2>
+        <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+          Let's discuss how we can collaborate to bring innovative createch solutions to your business
+        </p>
+      </div>
+
+      <app-b2b-call-form></app-b2b-call-form>
+    </div>
+  </section>
+
+  <!-- Creator Circle -->
+  <section class="py-20">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl md:text-5xl font-playfair font-bold text-white mb-4">
+          Creator <span class="gradient-text">Circle</span>
+        </h2>
+        <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+          Join our community of educators, coders, resin artists, techies, and hobbyists who are passionate about co-creating the future
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+        <div 
+          *ngFor="let creator of creatorTypes; let i = index"
+          class="glass-effect rounded-xl p-6 hover-lift">
+          <div class="space-y-4">
+            <h3 class="text-2xl font-semibold text-white">{{ creator.title }}</h3>
+            <p class="text-gray-300 leading-relaxed">{{ creator.description }}</p>
+            
+            <div class="space-y-2">
+              <h4 class="text-lg font-semibold text-teal-400">What You Get:</h4>
+              <div 
+                *ngFor="let benefit of creator.benefits"
+                class="flex items-center space-x-2">
+                <div class="w-2 h-2 rounded-full bg-gradient-to-r from-teal-400 to-cyan-400"></div>
+                <span class="text-gray-300 text-sm">{{ benefit }}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center">
+        <app-button
+          size="lg"
+          className="bg-gradient-to-r from-teal-500 to-cyan-500 hover:from-teal-600 hover:to-cyan-600 text-black font-semibold px-8 py-3 rounded-full glow-effect hover-lift"
+          (onClick)="handleJoinCreatorCircle()">
+          <svg class="mr-2 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z" />
+          </svg>
+          Join the Creator Circle
+        </app-button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Community Benefits Section -->
+  <section class="py-20">
+    <div class="container mx-auto px-4">
+      <app-community-benefits></app-community-benefits>
+    </div>
+  </section>
+
+  <!-- Creator Circle Application Form -->
+  <section 
+    *ngIf="showCreatorForm" 
+    id="creator-circle-form" 
+    class="py-20 bg-gradient-to-b from-gray-900/50 to-black">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl md:text-5xl font-playfair font-bold text-white mb-4">
+          Join the <span class="gradient-text">Creator Circle</span>
+        </h2>
+        <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+          Take the first step towards joining our vibrant community of createch innovators
+        </p>
+      </div>
+
+      <app-creator-circle-form></app-creator-circle-form>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-20">
+    <div class="container mx-auto px-4">
+      <div class="text-center space-y-8 max-w-4xl mx-auto">
+        <h2 class="text-4xl md:text-5xl font-playfair font-bold text-white">
+          Ready to <span class="gradient-text">Collaborate</span>?
+        </h2>
+        <p class="text-xl text-gray-300">
+          Whether you're looking for a B2B partnership or want to join our Creator Circle, we're excited to explore what we can create together.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <app-button
+            size="lg"
+            className="bg-gradient-to-r from-teal-500 to-cyan-500 hover:from-teal-600 hover:to-cyan-600 text-black font-semibold px-8 py-3 rounded-full glow-effect hover-lift"
+            (onClick)="handleBookB2BCall()">
+            <svg class="mr-2 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+            </svg>
+            Book a B2B Call
+          </app-button>
+          <app-button
+            variant="outline"
+            size="lg"
+            className="border-teal-400 text-teal-400 hover:bg-teal-400 hover:text-black px-8 py-3 rounded-full hover-lift"
+            (onClick)="handleJoinCreatorCircle()">
+            <svg class="mr-2 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z" />
+            </svg>
+            Join Creator Circle
+          </app-button>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

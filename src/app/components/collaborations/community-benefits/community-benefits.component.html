@@ -1,0 +1,95 @@
+<div class="space-y-16">
+  <!-- Community Features -->
+  <div>
+    <div class="text-center mb-12">
+      <h3 class="text-3xl font-playfair font-bold text-white mb-4">
+        Community <span class="gradient-text">Features</span>
+      </h3>
+      <p class="text-gray-300 max-w-2xl mx-auto">
+        Discover what makes our Creator Circle a thriving ecosystem of innovation and collaboration
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div 
+        *ngFor="let feature of communityFeatures; let i = index"
+        class="glass-effect rounded-xl p-6 hover-lift group text-center">
+        <div class="text-teal-400 mb-4 flex justify-center group-hover:scale-110 transition-transform">
+          <svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z" />
+          </svg>
+        </div>
+        <h4 class="text-xl font-semibold text-white mb-3">{{ feature.title }}</h4>
+        <p class="text-gray-300 leading-relaxed">{{ feature.description }}</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Membership Tiers -->
+  <div>
+    <div class="text-center mb-12">
+      <h3 class="text-3xl font-playfair font-bold text-white mb-4">
+        Membership <span class="gradient-text">Tiers</span>
+      </h3>
+      <p class="text-gray-300 max-w-2xl mx-auto">
+        Choose your level of involvement based on your time and interests
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div 
+        *ngFor="let tier of membershipTiers; let i = index"
+        class="glass-effect rounded-xl p-6 hover-lift text-center"
+        [class.ring-2]="i === 1"
+        [class.ring-teal-400]="i === 1"
+        [class.scale-105]="i === 1">
+        <div class="space-y-4">
+          <div 
+            class="w-16 h-16 mx-auto rounded-full bg-gradient-to-r flex items-center justify-center text-black font-bold text-xl"
+            [ngClass]="tier.color">
+            {{ tier.tier.charAt(0) }}
+          </div>
+          
+          <h4 class="text-2xl font-semibold text-white">{{ tier.tier }}</h4>
+          <p class="text-gray-300 text-sm">{{ tier.description }}</p>
+          
+          <div class="space-y-2">
+            <div 
+              *ngFor="let benefit of tier.benefits"
+              class="flex items-center space-x-2 text-sm text-gray-300">
+              <div class="w-2 h-2 rounded-full bg-gradient-to-r from-teal-400 to-cyan-400"></div>
+              <span>{{ benefit }}</span>
+            </div>
+          </div>
+          
+          <div class="pt-4 border-t border-gray-700">
+            <p class="text-xs text-gray-400">
+              <strong class="text-teal-400">Time Commitment:</strong> {{ tier.commitment }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Success Metrics -->
+  <div class="bg-gradient-to-r from-teal-900/20 to-cyan-900/20 rounded-2xl p-8">
+    <div class="text-center mb-8">
+      <h3 class="text-3xl font-playfair font-bold text-white mb-4">
+        Community <span class="gradient-text">Impact</span>
+      </h3>
+      <p class="text-gray-300 max-w-2xl mx-auto">
+        See the growing impact of our Creator Circle community
+      </p>
+    </div>
+
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+      <div 
+        *ngFor="let metric of successMetrics; let i = index"
+        class="text-center">
+        <div class="text-4xl font-bold gradient-text mb-2">{{ metric.number }}</div>
+        <p class="text-gray-300 text-sm">{{ metric.label }}</p>
+      </div>
+    </div>
+  </div>
+</div>

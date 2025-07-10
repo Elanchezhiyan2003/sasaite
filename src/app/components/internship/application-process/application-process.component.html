@@ -1,0 +1,144 @@
+<div class="space-y-16">
+  <!-- Application Process -->
+  <div>
+    <div class="text-center mb-12">
+      <h3 class="text-3xl font-playfair font-bold text-white mb-4">
+        Application <span class="gradient-text">Process</span>
+      </h3>
+      <p class="text-gray-300 max-w-2xl mx-auto">
+        A simple 4-step process designed to find passionate individuals ready to explore createch
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div 
+        *ngFor="let step of processSteps; let i = index"
+        class="glass-effect rounded-xl p-6 hover-lift text-center">
+        <div class="space-y-4">
+          <div class="w-16 h-16 mx-auto rounded-full bg-gradient-to-r from-teal-400 to-cyan-400 flex items-center justify-center text-black font-bold text-xl">
+            {{ step.step }}
+          </div>
+          
+          <div class="text-teal-400">
+            <svg class="h-8 w-8 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+            </svg>
+          </div>
+          
+          <h4 class="text-lg font-semibold text-white">{{ step.title }}</h4>
+          
+          <p class="text-gray-300 text-sm leading-relaxed">
+            {{ step.description }}
+          </p>
+          
+          <div class="text-xs text-teal-400 font-medium">
+            Timeline: {{ step.timeline }}
+          </div>
+          
+          <div class="space-y-1">
+            <div 
+              *ngFor="let detail of step.details"
+              class="flex items-center space-x-2 text-xs text-gray-400">
+              <svg class="h-3 w-3 text-teal-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span>{{ detail }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Requirements -->
+  <div>
+    <div class="text-center mb-12">
+      <h3 class="text-3xl font-playfair font-bold text-white mb-4">
+        Who Can <span class="gradient-text">Apply</span>?
+      </h3>
+      <p class="text-gray-300 max-w-2xl mx-auto">
+        We welcome diverse backgrounds and experiences. Here's what we're looking for:
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div 
+        *ngFor="let req of requirements; let i = index"
+        class="glass-effect rounded-xl p-6 hover-lift">
+        <h4 class="text-xl font-semibold text-white mb-4">{{ req.category }}</h4>
+        <div class="space-y-3">
+          <div 
+            *ngFor="let item of req.items"
+            class="flex items-center space-x-3">
+            <svg class="h-4 w-4 text-teal-400 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg>
+            <span class="text-gray-300 text-sm">{{ item }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Batch Information -->
+  <div>
+    <div class="text-center mb-12">
+      <h3 class="text-3xl font-playfair font-bold text-white mb-4">
+        Upcoming <span class="gradient-text">Batches</span>
+      </h3>
+      <p class="text-gray-300 max-w-2xl mx-auto">
+        Choose the batch that works best for your schedule. Limited seats available!
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div 
+        *ngFor="let batch of batchInfo; let i = index"
+        class="glass-effect rounded-xl p-6 hover-lift"
+        [class.ring-2]="batch.status === 'Open'"
+        [class.ring-teal-400]="batch.status === 'Open'">
+        <div class="space-y-4">
+          <div class="flex items-center justify-between">
+            <h4 class="text-xl font-semibold text-white">{{ batch.batch }}</h4>
+            <span 
+              class="px-3 py-1 rounded-full text-xs font-medium"
+              [class.bg-green-900/50]="batch.status === 'Open'"
+              [class.text-green-400]="batch.status === 'Open'"
+              [class.bg-gray-700]="batch.status !== 'Open'"
+              [class.text-gray-400]="batch.status !== 'Open'">
+              {{ batch.status }}
+            </span>
+          </div>
+          
+          <div class="space-y-2 text-sm">
+            <div class="flex items-center space-x-2">
+              <svg class="h-4 w-4 text-teal-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+              </svg>
+              <span class="text-gray-300">Starts: {{ batch.startDate }}</span>
+            </div>
+            <div class="flex items-center space-x-2">
+              <svg class="h-4 w-4 text-teal-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+              </svg>
+              <span class="text-gray-300">Apply by: {{ batch.applicationDeadline }}</span>
+            </div>
+            <div class="flex items-center space-x-2">
+              <svg class="h-4 w-4 text-teal-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z" />
+              </svg>
+              <span class="text-gray-300">Seats: {{ batch.seats }}</span>
+            </div>
+          </div>
+          
+          <div *ngIf="batch.status === 'Open'" class="w-full bg-gray-700 rounded-full h-2">
+            <div 
+              class="bg-gradient-to-r from-teal-400 to-cyan-400 h-2 rounded-full"
+              [style.width.%]="getSeatsProgress(batch.seats)">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,264 @@
+<div class="min-h-screen pt-20">
+  <!-- Hero Section -->
+  <section class="py-20 pattern-bg">
+    <div class="container mx-auto px-4">
+      <div class="text-center space-y-6 max-w-4xl mx-auto">
+        <h1 class="text-5xl md:text-6xl font-playfair font-bold">
+          <span class="gradient-text">Experience the Fusion</span>
+        </h1>
+        <p class="text-xl md:text-2xl text-gray-300">
+          Where Art Meets Technology in Living Color
+        </p>
+        <div class="glass-effect rounded-2xl p-8 max-w-3xl mx-auto">
+          <blockquote class="text-lg md:text-xl font-playfair italic">
+            "Don't just see art. Feel it. Touch it. Become part of it."
+          </blockquote>
+          <p class="text-teal-400 mt-4">— The Createch Experience</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience Types -->
+  <section class="py-20">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl md:text-5xl font-playfair font-bold gradient-text mb-4">
+          Choose Your Experience
+        </h2>
+        <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+          From gentle introductions to full immersion, find the perfect way to explore createch
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div 
+          *ngFor="let experience of experiences; let i = index"
+          class="glass-effect rounded-xl p-8 hover-lift group">
+          <div class="space-y-6">
+            <div class="flex items-center space-x-4">
+              <div class="text-teal-400 group-hover:scale-110 transition-transform">
+                <svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+              </div>
+              <h3 class="text-2xl font-playfair font-bold text-white">
+                {{ experience.title }}
+              </h3>
+            </div>
+            
+            <p class="text-gray-300 leading-relaxed">
+              {{ experience.description }}
+            </p>
+            
+            <div class="space-y-3">
+              <h4 class="text-lg font-semibold text-teal-400">What You'll Experience:</h4>
+              <div 
+                *ngFor="let feature of experience.features"
+                class="flex items-center space-x-3">
+                <div class="w-2 h-2 rounded-full bg-gradient-to-r from-teal-400 to-cyan-400"></div>
+                <span class="text-gray-300 text-sm">{{ feature }}</span>
+              </div>
+            </div>
+            
+            <div class="grid grid-cols-2 gap-4 text-sm">
+              <div class="flex items-center space-x-2">
+                <svg class="h-4 w-4 text-teal-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span class="text-gray-300">{{ experience.duration }}</span>
+              </div>
+              <div class="flex items-center space-x-2">
+                <svg class="h-4 w-4 text-teal-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z" />
+                </svg>
+                <span class="text-gray-300">{{ experience.capacity }}</span>
+              </div>
+            </div>
+            
+            <app-button
+              className="w-full bg-gradient-to-r from-teal-500 to-cyan-500 hover:from-teal-600 hover:to-cyan-600 text-black font-semibold py-3 rounded-full hover-lift"
+              (onClick)="handleBookExperience(experience.title)">
+              <svg class="mr-2 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h1.01M15 10h1.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              Book This Experience
+            </app-button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Upcoming Events -->
+  <section class="py-20 bg-gradient-to-b from-transparent to-gray-900/50">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl md:text-5xl font-playfair font-bold text-white mb-4">
+          Upcoming <span class="gradient-text">Events</span>
+        </h2>
+        <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+          Regular opportunities to experience the magic of createch
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div 
+          *ngFor="let event of upcomingEvents; let i = index"
+          class="glass-effect rounded-xl p-6 hover-lift">
+          <div class="space-y-4">
+            <h3 class="text-xl font-semibold text-white">{{ event.title }}</h3>
+            
+            <div class="space-y-2 text-sm">
+              <div class="flex items-center space-x-2">
+                <svg class="h-4 w-4 text-teal-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                </svg>
+                <span class="text-gray-300">{{ event.date }}</span>
+              </div>
+              <div class="flex items-center space-x-2">
+                <svg class="h-4 w-4 text-teal-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span class="text-gray-300">{{ event.time }}</span>
+              </div>
+            </div>
+            
+            <p class="text-gray-300 leading-relaxed">{{ event.description }}</p>
+            
+            <div class="flex items-center justify-between">
+              <span class="text-lg font-semibold gradient-text">{{ event.price }}</span>
+              <app-button
+                variant="outline"
+                size="sm"
+                className="border-teal-400 text-teal-400 hover:bg-teal-400 hover:text-black"
+                (onClick)="handleBookExperience(event.title)">
+                Book Now
+              </app-button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Virtual Preview -->
+  <section class="py-20">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div class="space-y-6">
+          <h2 class="text-4xl font-playfair font-bold text-white">
+            Can't Visit? <span class="gradient-text">Experience Virtually</span>
+          </h2>
+          <div class="space-y-4 text-gray-300 leading-relaxed">
+            <p>
+              Get a taste of our createch experiences from anywhere in the world with our virtual preview sessions.
+            </p>
+            <p>
+              Through live streaming and interactive demos, you can see our installations in action and even control some elements remotely.
+            </p>
+          </div>
+          
+          <div class="space-y-3">
+            <h3 class="text-xl font-semibold text-white">Virtual Experience Features:</h3>
+            <div 
+              *ngFor="let feature of [
+                'Live HD streaming of installations',
+                'Remote interaction capabilities',
+                'Real-time Q&A with experts',
+                'Personalized virtual tours',
+                'Digital takeaway materials'
+              ]"
+              class="flex items-center space-x-3">
+              <div class="w-2 h-2 rounded-full bg-gradient-to-r from-teal-400 to-cyan-400"></div>
+              <span class="text-gray-300">{{ feature }}</span>
+            </div>
+          </div>
+          
+          <app-button
+            className="bg-gradient-to-r from-teal-500 to-cyan-500 hover:from-teal-600 hover:to-cyan-600 text-black font-semibold px-6 py-3 rounded-full hover-lift"
+            (onClick)="handleJoinVirtualExperience()">
+            <svg class="mr-2 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h1.01M15 10h1.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            Join Virtual Experience
+          </app-button>
+        </div>
+
+        <div class="glass-effect rounded-2xl p-4 hover-lift">
+          <img  
+            class="w-full h-80 object-cover rounded-xl" 
+            alt="Virtual createch experience with interactive streaming setup"
+            src="https://images.unsplash.com/photo-1633356122544-f134324a6cee" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="py-20 bg-gradient-to-r from-teal-900/20 to-cyan-900/20">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl md:text-5xl font-playfair font-bold text-white mb-4">
+          What People <span class="gradient-text">Experience</span>
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div 
+          *ngFor="let testimonial of testimonials; let i = index"
+          class="glass-effect rounded-xl p-6 hover-lift">
+          <div class="space-y-4">
+            <blockquote class="text-gray-300 italic leading-relaxed">
+              "{{ testimonial.quote }}"
+            </blockquote>
+            <div class="border-t border-gray-700 pt-4">
+              <p class="text-white font-semibold">{{ testimonial.name }}</p>
+              <p class="text-gray-400 text-sm">{{ testimonial.role }}</p>
+              <p class="text-teal-400 text-xs mt-1">{{ testimonial.experience }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-20 bg-gradient-to-b from-transparent to-gray-900/50">
+    <div class="container mx-auto px-4">
+      <div class="text-center space-y-8 max-w-4xl mx-auto">
+        <h2 class="text-4xl md:text-5xl font-playfair font-bold text-white">
+          Ready to <span class="gradient-text">Experience the Magic</span>?
+        </h2>
+        <p class="text-xl text-gray-300">
+          Book your createch experience today and discover what happens when art and technology become one.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <app-button
+            size="lg"
+            className="bg-gradient-to-r from-teal-500 to-cyan-500 hover:from-teal-600 hover:to-cyan-600 text-black font-semibold px-8 py-3 rounded-full glow-effect hover-lift"
+            (onClick)="handleBookExperience('General')">
+            <svg class="mr-2 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+            </svg>
+            Book Experience
+          </app-button>
+          <app-button
+            variant="outline"
+            size="lg"
+            className="border-teal-400 text-teal-400 hover:bg-teal-400 hover:text-black px-8 py-3 rounded-full hover-lift"
+            (onClick)="handleTryVirtualFirst()">
+            <svg class="mr-2 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h1.01M15 10h1.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            Try Virtual First
+          </app-button>
+        </div>
+        <div class="text-sm text-gray-400 space-y-1">
+          <p>💬 WhatsApp: +91 90254 86901</p>
+          <p>Limited slots available • Book in advance • Group discounts available</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

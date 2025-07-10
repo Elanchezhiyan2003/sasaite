@@ -1,0 +1,170 @@
+<div class="min-h-screen pt-20">
+  <!-- Hero Section -->
+  <section class="py-20 pattern-bg">
+    <div class="container mx-auto px-4">
+      <div class="text-center space-y-6 max-w-4xl mx-auto">
+        <h1 class="text-5xl md:text-6xl font-playfair font-bold">
+          Our <span class="gradient-text">Offerings</span>
+        </h1>
+        <p class="text-xl md:text-2xl text-gray-300">
+          Three pillars of creativity where emotion meets innovation
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Offerings -->
+  <section class="py-20">
+    <div class="container mx-auto px-4">
+      <div class="space-y-20">
+        <div 
+          *ngFor="let offering of offerings; let i = index"
+          class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
+          [class.lg:grid-flow-col-dense]="i % 2 === 1">
+          
+          <div class="space-y-6" [class.lg:col-start-2]="i % 2 === 1">
+            <div class="flex items-center space-x-4">
+              <div class="text-teal-400">
+                <svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zM21 5a2 2 0 00-2-2h-4a2 2 0 00-2 2v12a4 4 0 004 4h4a2 2 0 002-2V5z" />
+                </svg>
+              </div>
+              <h2 class="text-4xl font-playfair font-bold text-white">
+                {{ offering.title }}
+              </h2>
+            </div>
+            
+            <p class="text-xl text-gray-300 leading-relaxed">
+              {{ offering.description }}
+            </p>
+            
+            <div class="space-y-3">
+              <div 
+                *ngFor="let service of offering.services"
+                class="flex items-center space-x-3">
+                <div class="w-2 h-2 rounded-full bg-gradient-to-r from-teal-400 to-cyan-400"></div>
+                <span class="text-gray-300">{{ service }}</span>
+              </div>
+            </div>
+            
+            <app-button
+              className="bg-gradient-to-r from-teal-500 to-cyan-500 hover:from-teal-600 hover:to-cyan-600 text-black font-semibold px-6 py-3 rounded-full hover-lift"
+              (onClick)="handleOrderClick()">
+              Explore {{ offering.title }}
+            </app-button>
+          </div>
+          
+          <div [class.lg:col-start-1]="i % 2 === 1">
+            <div class="glass-effect rounded-2xl p-4 hover-lift">
+              <img  
+                class="w-full h-80 object-cover rounded-xl" 
+                [alt]="offering.title + ' showcase'"
+                src="https://images.unsplash.com/photo-1632237405949-50d7c6fa975d" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MIY Kits Section -->
+  <section class="py-20 bg-gradient-to-b from-transparent to-gray-900/50">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl md:text-5xl font-playfair font-bold gradient-text mb-4">
+          MIY Kit Collection
+        </h2>
+        <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+          Make-It-Yourself kits designed to bring the magic of createch to your home
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div 
+          *ngFor="let kit of kitTypes; let i = index"
+          class="glass-effect rounded-xl p-6 hover-lift group">
+          <div class="text-center space-y-4">
+            <h3 class="text-2xl font-semibold text-white">{{ kit.type }}</h3>
+            <p class="text-gray-300">{{ kit.description }}</p>
+            
+            <div class="space-y-2">
+              <div 
+                *ngFor="let item of kit.contents"
+                class="flex items-center space-x-2 text-sm text-gray-400">
+                <svg class="h-4 w-4 text-teal-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+                </svg>
+                <span>{{ item }}</span>
+              </div>
+            </div>
+            
+            <div class="pt-4 border-t border-gray-700">
+              <p class="text-lg font-semibold gradient-text">{{ kit.price }}</p>
+            </div>
+            
+            <app-button
+              variant="outline"
+              className="w-full border-teal-400 text-teal-400 hover:bg-teal-400 hover:text-black group-hover:scale-105 transition-transform"
+              (onClick)="handleOrderClick()">
+              Coming Soon
+            </app-button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Special Features -->
+  <section class="py-20">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl md:text-5xl font-playfair font-bold text-white mb-4">
+          What Makes Us <span class="gradient-text">Special</span>
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div 
+          *ngFor="let feature of features; let i = index"
+          class="glass-effect rounded-xl p-6 hover-lift group text-center">
+          <div class="text-teal-400 mb-4 flex justify-center group-hover:scale-110 transition-transform">
+            <svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold text-white mb-3">{{ feature.title }}</h3>
+          <p class="text-gray-300 leading-relaxed">{{ feature.description }}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-20 bg-gradient-to-r from-teal-900/20 to-cyan-900/20">
+    <div class="container mx-auto px-4">
+      <div class="text-center space-y-8 max-w-4xl mx-auto">
+        <h2 class="text-4xl md:text-5xl font-playfair font-bold text-white">
+          Ready to Create Your <span class="gradient-text">Masterpiece</span>?
+        </h2>
+        <p class="text-xl text-gray-300">
+          Whether you're looking for a custom creation or want to try your hand at our MIY kits, we're here to guide you through the journey.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <app-button
+            size="lg"
+            className="bg-gradient-to-r from-teal-500 to-cyan-500 hover:from-teal-600 hover:to-cyan-600 text-black font-semibold px-8 py-3 rounded-full glow-effect hover-lift"
+            (onClick)="handleOrderClick()">
+            Start Your Project
+          </app-button>
+          <app-button
+            variant="outline"
+            size="lg"
+            className="border-teal-400 text-teal-400 hover:bg-teal-400 hover:text-black px-8 py-3 rounded-full hover-lift"
+            (onClick)="handleOrderClick()">
+            Browse Kits
+          </app-button>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

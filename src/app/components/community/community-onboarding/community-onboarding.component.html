@@ -1,0 +1,78 @@
+<div class="space-y-16">
+  <!-- Onboarding Process -->
+  <div>
+    <div class="text-center mb-12">
+      <h3 class="text-3xl font-playfair font-bold text-white mb-4">
+        Onboarding <span class="gradient-text">Process</span>
+      </h3>
+      <p class="text-gray-300 max-w-2xl mx-auto">
+        Your journey from application to becoming a fully integrated Nebulher community member
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div 
+        *ngFor="let step of onboardingSteps; let i = index"
+        class="glass-effect rounded-xl p-6 hover-lift text-center">
+        <div class="space-y-4">
+          <div class="w-16 h-16 mx-auto rounded-full bg-gradient-to-r from-teal-400 to-cyan-400 flex items-center justify-center text-black font-bold text-xl">
+            {{ step.step }}
+          </div>
+          
+          <div class="text-teal-400">
+            <svg class="h-8 w-8 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z" />
+            </svg>
+          </div>
+          
+          <h4 class="text-lg font-semibold text-white">{{ step.title }}</h4>
+          
+          <p class="text-gray-300 text-sm leading-relaxed">
+            {{ step.description }}
+          </p>
+          
+          <div class="text-xs text-teal-400 font-medium">
+            Timeline: {{ step.timeline }}
+          </div>
+          
+          <div class="space-y-1">
+            <div 
+              *ngFor="let detail of step.details"
+              class="flex items-center space-x-2 text-xs text-gray-400">
+              <svg class="h-3 w-3 text-teal-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span>{{ detail }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Success Metrics -->
+  <div>
+    <div class="text-center mb-12">
+      <h3 class="text-3xl font-playfair font-bold text-white mb-4">
+        Community <span class="gradient-text">Impact</span>
+      </h3>
+      <p class="text-gray-300 max-w-2xl mx-auto">
+        See the positive impact our community has on members' lives and careers
+      </p>
+    </div>
+
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+      <div 
+        *ngFor="let metric of [
+          { number: '95%', label: 'Member Satisfaction' },
+          { number: '80%', label: 'Career Advancement' },
+          { number: '150+', label: 'Projects Completed' },
+          { number: '90%', label: 'Skill Improvement' }
+        ]; let i = index"
+        class="text-center">
+        <div class="text-4xl font-bold gradient-text mb-2">{{ metric.number }}</div>
+        <p class="text-gray-300 text-sm">{{ metric.label }}</p>
+      </div>
+    </div>
+  </div>
+</div>
