@@ -58,7 +58,7 @@ const Header = () => {
                 key={item.path}
                 to={item.path}
                 className={`text-sm font-medium transition-colors hover:text-teal-400 ${
-                  location.pathname === item.path ? 'text-teal-400' : 'text-white'
+                  location.pathname === item.path ? 'text-teal-400' : 'text-black'
                 }`}
               >
                 {item.name}

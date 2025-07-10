@@ -17,98 +17,107 @@ const Home = () => {
         />
       </Helmet>
 
-      <div className="min-h-screen">
+      <div className="min-h-screen bg-ivory">
         {/* Hero Section */}
-        <section className="relative min-h-screen flex items-center justify-center pattern-bg overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-br from-black/50 via-transparent to-teal-900/20"></div>
+        <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+          <div className="container mx-auto px-4 py-16">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              {/* Left Side - Image */}
 
-          <div className="container mx-auto px-4 py-28 relative z-10">
-            <div className="text-center space-y-8 max-w-4xl mx-auto">
+              {/* Right Side - Text Content */}
               <motion.div
-                initial={{ opacity: 0, y: 50 }}
-                animate={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, x: 50 }}
+                animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8 }}
-                className="space-y-4"
+                className="space-y-6"
               >
-                {/* <h1 className="text-5xl md:text-7xl font-playfair font-bold text-shadow"> */}
-                <h1 className="text-5xl md:text-7xl font-playfair font-bold text-shadow leading-snug md:leading-[1.2]">
+                <h1 className="text-4xl md:text-6xl font-playfair font-bold text-gray-900 leading-tight">
                   <span className="gradient-text">Art Isn't Static</span>
-                  <br className="" />
-                  <span className="text-white">Neither Are We</span>
+                  <br />
+                  <span>Neither Are We</span>
                 </h1>
 
-                <motion.div
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ delay: 0.3, duration: 0.8 }}
-                  className="space-y-2"
-                >
-                  {/* <h2 className="text-2xl md:text-3xl font-playfair py-5 text-teal-300">
-                    Stasis Artis : Sculpting Emotion Through Resin and Code
-                  </h2> */}
-                  <p className="text-lg md:text-xl text-gray-300 max-w-4xl py-5 mx-auto leading-relaxed">
-                    We don't just make art. We encode memories into materials —
-                    blending handcrafted resin design with digital fluidity,
-                    intelligent motion, and emotional software.
-                  </p>
-                </motion.div>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.6, duration: 0.8 }}
-                className="flex flex-col sm:flex-row gap-4 justify-center items-center py-2"
-              >
-                <Link to="/experience">
-                  <Button
-                    size="lg"
-                    className="bg-gradient-to-r from-teal-500 to-cyan-500 hover:from-teal-600 hover:to-cyan-600 text-black font-semibold px-8 py-3 rounded-full glow-effect hover-lift"
-                  >
-                    <Sparkles className="mr-2 h-5 w-5" />
-                    Experience the Fusion
-                  </Button>
-                </Link>
-                <Link to="/contact">
-                  <Button
-                    variant="outline"
-                    size="lg"
-                    className="border-teal-400 text-teal-400 hover:bg-teal-400 hover:text-black px-8 py-3 rounded-full hover-lift"
-                  >
-                    <Zap className="mr-2 h-5 w-5" />
-                    Create With Us
-                  </Button>
-                </Link>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 1, duration: 0.8 }}
-                className="glass-effect rounded-2xl p-6 max-w-2xl mx-auto mt-12"
-              >
-                <blockquote className="text-lg md:text-xl font-playfair italic text-center">
-                  "In a world of automation, we choose sensation. In a world of
-                  code, we choose craft."
-                </blockquote>
-                {/* <p className="text-teal-400 mt-2 text-center">— Stasis Artis Manifesto</p> */}
-                <p className="text-teal-400 mt-2 text-center">
-                  — Our Manifesto
+                <p className="text-lg md:text-xl text-gray-600 max-w-xl leading-relaxed">
+                  We don't just make art. We encode memories into materials —
+                  blending handcrafted resin design with digital fluidity,
+                  intelligent motion, and emotional software.
                 </p>
+
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <Link to="/experience">
+                    <Button
+                      size="lg"
+                      className="bg-gradient-to-r from-teal-500 to-cyan-500 hover:from-teal-600 hover:to-cyan-600 text-black font-semibold px-8 py-3 rounded-full glow-effect hover-lift"
+                    >
+                      <Sparkles className="mr-2 h-5 w-5" />
+                      Experience the Fusion
+                    </Button>
+                  </Link>
+                  <Link to="/contact">
+                    <Button
+                      variant="outline"
+                      size="lg"
+                      className="border-teal-400 text-teal-400 hover:bg-teal-400 hover:text-black px-8 py-3 rounded-full hover-lift"
+                    >
+                      <Zap className="mr-2 h-5 w-5" />
+                      Create With Us
+                    </Button>
+                  </Link>
+                </div>
+                {/* 
+        <blockquote className="mt-8 italic font-playfair text-gray-700 text-lg">
+          "In a world of automation, we choose sensation. In a world of code, we choose craft."
+          <p className="text-teal-400 mt-2">— Our Manifesto</p>
+        </blockquote> */}
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, x: -50 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8 }}
+                className="w-full"
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1581094271901-8022df4466f9"
+                  alt="Resin Tech Art"
+                  className="w-full h-auto rounded-2xl shadow-lg object-cover"
+                />
               </motion.div>
             </div>
           </div>
+        </section>
+        {/* <section className="w-full bg-teal-600 py-8">
+          <div className="container mx-auto px-4">
+            <p className="text-center text-white text-lg md:text-xl font-playfair italic tracking-wide">
+              "In a world of automation, we choose sensation. In a world of
+              code, we choose craft."
+              <span className="font-semibold"> — Our Manifesto</span>
+            </p>
+          </div>
+        </section> */}
+        <section className="w-full bg-gradient-to-r from-teal-600 to-cyan-600 py-12">
+          <div className="container mx-auto px-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-8">
+              {/* Manifesto Heading with vertical border */}
+              <div className="flex justify-center md:justify-end">
+                <h2 className="text-3xl md:text-4xl font-bold font-playfair text-ivory text-right border-r-4 border-white pr-6">
+                  Our
+                  <br />
+                  Manifesto
+                </h2>
+              </div>
 
-          {/* Floating Elements */}
-          <div className="absolute top-20 left-10 w-20 h-20 rounded-full bg-gradient-to-r from-teal-400/20 to-cyan-400/20 floating-animation"></div>
-          <div
-            className="absolute bottom-20 right-10 w-32 h-32 rounded-full bg-gradient-to-r from-cyan-400/10 to-teal-400/10 floating-animation"
-            style={{ animationDelay: "2s" }}
-          ></div>
-          <div
-            className="absolute top-1/2 left-20 w-16 h-16 rounded-full bg-gradient-to-r from-teal-500/15 to-cyan-500/15 floating-animation"
-            style={{ animationDelay: "4s" }}
-          ></div>
+              {/* Manifesto Quote */}
+              <div className="pl-0 md:pl-6 text-left">
+                <p className="text-white text-lg md:text-xl font-playfair italic tracking-wide leading-relaxed">
+                  "In a world of automation, we choose sensation. In a world of
+                  code, we choose craft."
+                </p>
+                <p className="text-black text-md mt-2 font-semibold">
+                  — The Fusion Philosophy
+                </p>
+              </div>
+            </div>
+          </div>
         </section>
 
         {/* Features Section */}
@@ -118,84 +127,27 @@ const Home = () => {
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
-              className="text-center mb-16"
+              className="text-center"
             >
-              {/* <h2 className="text-4xl md:text-5xl font-playfair font-bold gradient-text mb-4">
-                Where Code Meets Craft
-              </h2> */}
-              {/* <h2 className="text-4xl md:text-5xl font-playfair font-bold gradient-text mb-4">
-                About Us
-              </h2> */}
-              {/* <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Discover how we merge logic and light, tech and tenderness, circuits and creativity
-              </p> */}
             </motion.div>
-
-            {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {[
-                {
-                  icon: <Heart className="h-8 w-8" />,
-                  title: "Emotional Technology",
-                  description: "We embed feelings into circuits, creating tech that responds to human emotion and connection."
-                },
-                {
-                  icon: <Sparkles className="h-8 w-8" />,
-                  title: "Resin Artistry",
-                  description: "Handcrafted resin creations that capture memories, stories, and moments in crystalline beauty."
-                },
-                {
-                  icon: <Zap className="h-8 w-8" />,
-                  title: "Smart Integration",
-                  description: "LEDs, sensors, and interactive elements that bring static art to dynamic life."
-                },
-                {
-                  icon: <Users className="h-8 w-8" />,
-                  title: "Community Driven",
-                  description: "Building a ecosystem of creators, coders, and dreamers who refuse to pick just one title."
-                },
-                {
-                  icon: <ArrowRight className="h-8 w-8" />,
-                  title: "MSME Certified",
-                  description: "India's first women-led MSME-registered createch studio, pioneering the fusion movement."
-                },
-                {
-                  icon: <Heart className="h-8 w-8" />,
-                  title: "Educational Impact",
-                  description: "Teaching the next generation that creativity and technology are not opposites, but partners."
-                }
-              ].map((feature, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="glass-effect rounded-xl p-6 hover-lift group"
-                >
-                  <div className="text-teal-400 mb-4 group-hover:scale-110 transition-transform">
-                    {feature.icon}
-                  </div>
-                  <h3 className="text-xl font-semibold text-white mb-3">{feature.title}</h3>
-                  <p className="text-gray-300 leading-relaxed">{feature.description}</p>
-                </motion.div>
-              ))}
-            </div> */}
-            <section className="">
+            <section className="py-20">
               <div className="container mx-auto px-4">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center pb-2">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                  {/* Left Text Side */}
                   <motion.div
                     initial={{ opacity: 0, x: -50 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.8 }}
-                    className="space-y-16 lg:pr-8"
+                    className="space-y-10 lg:pr-8"
                   >
-                    <h2 className="text-4xl font-playfair font-bold text-white">
+                    <h2 className="text-4xl font-playfair font-bold gradient-text">
                       The Vision Behind{" "}
                       <span className="gradient-text">Stasis Artis</span>
                     </h2>
-                    <div className="space-y-5 text-gray-300 leading-relaxed">
+                    <div className="space-y-5 text-black leading-relaxed">
                       <p>
                         In a world that constantly asks us to choose between
-                        logic and creativity, between technology and art, We
+                        logic and creativity, between technology and art, we
                         refused to pick a side. As a woman in tech, I've always
                         believed that the most beautiful innovations happen at
                         the intersection of seemingly opposite worlds.
@@ -216,19 +168,20 @@ const Home = () => {
                     </div>
                   </motion.div>
 
+                  {/* Right Image Side */}
                   <motion.div
                     initial={{ opacity: 0, x: 50 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.8 }}
                     className="relative"
                   >
-                    <div className="glass-effect rounded-2xl p-8 space-y-4">
+                    <div className="glass-effect rounded-2xl p-8 space-y-4 h-full flex flex-col justify-between">
                       <img
                         className="w-full h-64 object-cover rounded-xl"
                         alt="Asmiya Bincy working on resin art with embedded technology"
                         src="https://images.unsplash.com/photo-1581094271901-8022df4466f9"
                       />
-                      <div className="text-center">
+                      <div className="text-center mt-4">
                         <h3 className="text-xl font-semibold text-white">
                           Asmiya Bincy
                         </h3>
@@ -256,57 +209,68 @@ const Home = () => {
 
         {/* Vision & Mission Section */}
         {/* <VisionMission /> */}
-        <div className='mt-44 mb-10 container mx-auto px-4'>
-          <h2 className="text-4xl font-playfair font-bold text-white text-center ">What we offer</h2>
+        <div className="mt-44 mb-10 container mx-auto px-4">
+          <h2 className="text-4xl font-playfair font-bold text-white text-center ">
+            What we offer
+          </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 py-16  mx-auto px-4">
-              {[
-                {
-                  icon: <Heart className="h-8 w-8" />,
-                  title: "Code",
-                  description: "We embed feelings into circuits, creating tech that responds to human emotion and connection."
-                },
-                {
-                  icon: <Sparkles className="h-8 w-8" />,
-                  title: "Craft",
-                  description: "Handcrafted resin creations that capture memories, stories, and moments in crystalline beauty."
-                },
-                {
-                  icon: <Zap className="h-8 w-8" />,
-                  title: "Code n Craft",
-                  description: "LEDs, sensors, and interactive elements that bring static art to dynamic life."
-                },
-                {
-                  icon: <Users className="h-8 w-8" />,
-                  title: "Programs",
-                  description: "Building a ecosystem of creators, coders, and dreamers who refuse to pick just one title."
-                },
-                {
-                  icon: <ArrowRight className="h-8 w-8" />,
-                  title: "Bulk Orders",
-                  description: "India's first women-led MSME-registered createch studio, pioneering the fusion movement."
-                },
-                {
-                  icon: <Heart className="h-8 w-8" />,
-                  title: "Createch Internship",
-                  description: "Teaching the next generation that creativity and technology are not opposites, but partners."
-                }
-              ].map((feature, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="glass-effect rounded-xl p-6 hover-lift group"
-                >
-                  <div className="text-teal-400 mb-4 group-hover:scale-110 transition-transform">
-                    {feature.icon}
-                  </div>
-                  <h3 className="text-xl font-semibold text-white mb-3">{feature.title}</h3>
-                  <p className="text-gray-300 leading-relaxed">{feature.description}</p>
-                </motion.div>
-              ))}
-            </div>
-            
+            {[
+              {
+                icon: <Heart className="h-8 w-8" />,
+                title: "Code",
+                description:
+                  "We embed feelings into circuits, creating tech that responds to human emotion and connection.",
+              },
+              {
+                icon: <Sparkles className="h-8 w-8" />,
+                title: "Craft",
+                description:
+                  "Handcrafted resin creations that capture memories, stories, and moments in crystalline beauty.",
+              },
+              {
+                icon: <Zap className="h-8 w-8" />,
+                title: "Code n Craft",
+                description:
+                  "LEDs, sensors, and interactive elements that bring static art to dynamic life.",
+              },
+              {
+                icon: <Users className="h-8 w-8" />,
+                title: "Programs",
+                description:
+                  "Building a ecosystem of creators, coders, and dreamers who refuse to pick just one title.",
+              },
+              {
+                icon: <ArrowRight className="h-8 w-8" />,
+                title: "Bulk Orders",
+                description:
+                  "India's first women-led MSME-registered createch studio, pioneering the fusion movement.",
+              },
+              {
+                icon: <Heart className="h-8 w-8" />,
+                title: "Createch Internship",
+                description:
+                  "Teaching the next generation that creativity and technology are not opposites, but partners.",
+              },
+            ].map((feature, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                className="glass-effect rounded-xl p-6 hover-lift group"
+              >
+                <div className="text-teal-400 mb-4 group-hover:scale-110 transition-transform">
+                  {feature.icon}
+                </div>
+                <h3 className="text-xl font-semibold text-white mb-3">
+                  {feature.title}
+                </h3>
+                <p className="text-gray-300 leading-relaxed">
+                  {feature.description}
+                </p>
+              </motion.div>
+            ))}
+          </div>
         </div>
 
         {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 py-28 mx-auto px-4">
